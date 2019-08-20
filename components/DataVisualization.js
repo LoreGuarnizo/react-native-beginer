@@ -1,23 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ScrollView, Text } from 'react-native';
 import { VictoryArea, VictoryBar, VictoryCandlestick, VictoryChart, VictoryGroup, VictoryLine, VictoryPie, VictoryScatter, VictoryStack } from 'victory-native';
-import styles, { getStyles } from './Styles/Chart';
-export { candleData, random, range, getYFunction, generateRandomData, getTransitionData } from '../services/ChartData';
+import styles from './Styles/Chart';
+import { candleData, getYFunction, generateRandomData, getTransitionData, getStyles } from '../services/ChartData';
 
 export const DataVisualization = () => {
-  const [y, setY] = useState(getYFunction());
-  const [style, setStyle] = useState(getStyles());
-  const [transitionData, setTransitionData] = useState(getTransitionData());
-  const [randomData, setRandomData] = useState(generateRandomData());
 
-  useEffect(() => {
-    setInterval(() => {
-      setY(getYFunction());
-      setStyle(getStyles());
-      setTransitionData(getTransitionData());
-      setRandomData(generateRandomData());
-    }, 3000);
-  },[y, style,transitionData,randomData])
+  const y = getYFunction();
+  const style = getStyles();
+  const transitionData = getTransitionData();
+  const randomData = generateRandomData();
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
