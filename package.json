@@ -17,7 +17,7 @@
     "react-native-modal": "^11.3.1",
     "react-native-web": "^0.11.4",
     "react-navigation": "^3.11.1",
-    "victory-native": "^32.0.2"
+    "victory-native": "^36.6.8"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.1.1"
